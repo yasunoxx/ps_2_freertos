@@ -1,3 +1,4 @@
+// Original Copyright:
 // Copyright (c) 2021 Michael Stoops. All rights reserved.
 // Portions copyright (c) 2021 Raspberry Pi (Trading) Ltd.
 // 
@@ -21,7 +22,9 @@
 //
 // SPDX-License-Identifier: BSD-3-Clause
 //
+
+// modify for ps_2_freertos (C)2025 yasunoxx▼Julia
+
 #define BUF_LEN         0x100
 
-extern void printbuf(uint8_t buf[], size_t len);
-extern int spi_main( void );
+extern void printbuf( uint16_t buf[], size_t len );

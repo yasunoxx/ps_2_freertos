@@ -1,3 +1,6 @@
+// spi_slave.c -- Motorola SPI slave mode for RP2040
+
+// Original Copyright:
 // Copyright (c) 2021 Michael Stoops. All rights reserved.
 // Portions copyright (c) 2021 Raspberry Pi (Trading) Ltd.
 // 
@@ -23,28 +26,25 @@
 //
 // Example of an SPI bus slave using the PL022 SPI interface
 
+// modify for ps_2_freertos (C)2025 yasunoxx▼Julia
+
 #include <stdio.h>
 #include <string.h>
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/spi.h"
+// and rp2040/hardware_structs/include/hardware/structs/spi.h
+// and rp2040/hardware_regs/include/hardware/regs/spi.h
 #include "spi_slave.h"
 
-void printbuf(uint8_t buf[], size_t len) {
-    size_t i;
-    for (i = 0; i < len; ++i) {
-        if (i % 16 == 15)
-            printf("%02x\n", buf[i]);
-        else
-            printf("%02x ", buf[i]);
-    }
+void reenable_spi( spi_inst_t *spi )
+{
+    // Disable the SPI
+    hw_clear_bits(&spi_get_hw(spi)->cr1, SPI_SSPCR1_SSE_BITS);
 
-    // append trailing newline if there isn't one
-    if (i % 16) {
-        putchar('\n');
-    }
+    // enable the SPI
+    hw_set_bits(&spi_get_hw(spi)->cr1, SPI_SSPCR1_SSE_BITS);
 }
-
 
 int spi_main()
 {
@@ -58,33 +58,76 @@ int spi_main()
     printf("SPI slave example\n");
 
     // Enable SPI 0 at 1 MHz and connect to GPIOs
-    spi_init(spi_default, 1000 * 1000);
-    spi_set_slave(spi_default, true);
-    gpio_set_function(PICO_DEFAULT_SPI_RX_PIN, GPIO_FUNC_SPI);
-    gpio_set_function(PICO_DEFAULT_SPI_SCK_PIN, GPIO_FUNC_SPI);
-    gpio_set_function(PICO_DEFAULT_SPI_TX_PIN, GPIO_FUNC_SPI);
-    gpio_set_function(PICO_DEFAULT_SPI_CSN_PIN, GPIO_FUNC_SPI);
+    spi_init( spi_default, 800 * 1000 );
+    spi_set_format( spi_default, 11, 1, 0, SPI_MSB_FIRST );
+    spi_set_slave( spi_default, true );
+
+//  PICO_DEFAULT_SPI_*_PIN: configured in /boards/include/boards/*.h
+    gpio_set_function( PICO_DEFAULT_SPI_RX_PIN, GPIO_FUNC_SPI );
+    gpio_set_function( PICO_DEFAULT_SPI_SCK_PIN, GPIO_FUNC_SPI );
+    gpio_set_function( PICO_DEFAULT_SPI_TX_PIN, GPIO_FUNC_SPI );
+//    gpio_set_function( PICO_DEFAULT_SPI_CSN_PIN, GPIO_FUNC_SPI );
     // Make the SPI pins available to picotool
-    bi_decl(bi_4pins_with_func(PICO_DEFAULT_SPI_RX_PIN, PICO_DEFAULT_SPI_TX_PIN, PICO_DEFAULT_SPI_SCK_PIN, PICO_DEFAULT_SPI_CSN_PIN, GPIO_FUNC_SPI));
+    bi_decl( bi_3pins_with_func(
+            PICO_DEFAULT_SPI_RX_PIN,
+            PICO_DEFAULT_SPI_TX_PIN,
+            PICO_DEFAULT_SPI_SCK_PIN,
+//            PICO_DEFAULT_SPI_CSN_PIN,
+            GPIO_FUNC_SPI
+    ) );
 
-    uint8_t out_buf[BUF_LEN], in_buf[BUF_LEN];
+    uint16_t in_buf[ BUF_LEN ];
 
-    // Initialize output buffer
-    for (size_t i = 0; i < BUF_LEN; ++i) {
-        // bit-inverted from i. The values should be: {0xff, 0xfe, 0xfd...}
-        out_buf[i] = ~i;
-    }
-
-    printf("SPI slave says: When reading from MOSI, the following buffer will be written to MISO:\n");
-    printbuf(out_buf, BUF_LEN);
-    
-    for (size_t i = 0; ; ++i) {
+#define PS_2_STARTBIT   0b010000000000
+#define PS_2_PARITYBIT  0b000000000010
+#define PS_2_STOPBIT    0b000000000001
+    while( 1 )
+    {
         // Write the output buffer to MISO, and at the same time read from MOSI.
-        spi_write_read_blocking(spi_default, out_buf, in_buf, BUF_LEN);
+        // spi_write16_blocking( spi_default, out_buf, BUF_LEN );
+        spi_read16_blocking( spi_default, 0, in_buf, 1 );
+        printf( "%04x -> ", in_buf[ 0 ] );
+        uint8_t keytmp = ( in_buf[ 0 ] >> 2 ) & 0x0FF;
+        uint8_t keycode = 0;
+        // rotate MSB first -> LSB first
+        if( ( keytmp & 0b10000000 ) != 0 ) keycode |=        0b1;
+        if( ( keytmp &  0b1000000 ) != 0 ) keycode |=       0b10;
+        if( ( keytmp &   0b100000 ) != 0 ) keycode |=      0b100;
+        if( ( keytmp &    0b10000 ) != 0 ) keycode |=     0b1000;
+        if( ( keytmp &     0b1000 ) != 0 ) keycode |=    0b10000;
+        if( ( keytmp &      0b100 ) != 0 ) keycode |=   0b100000;
+        if( ( keytmp &       0b10 ) != 0 ) keycode |=  0b1000000;
+        if( ( keytmp &        0b1 ) != 0 ) keycode |= 0b10000000;
 
-        // Write to stdio whatever came in on the MOSI line.
-        printf("SPI slave says: read page %d from the MOSI line:\n", i);
-        printbuf(in_buf, BUF_LEN);
+#ifdef DEBUG
+        if( ( in_buf[ 0 ] & PS_2_STARTBIT ) == 0 )
+        {
+            printf( "o" );
+        }
+        else
+        {
+            printf( "x" );
+        }
+        printf( "%08b", keytmp );
+        if( ( in_buf[ 0 ] & PS_2_PARITYBIT ) == 0 )
+        {
+            printf( "P" );
+        }
+        else
+        {
+            printf( "X" );
+        }
+        if( ( in_buf[ 0 ] & PS_2_STOPBIT ) == 0 )
+        {
+            printf( "x " );
+        }
+        else
+        {
+            printf( "o " );
+        }
+#endif
+        printf( "keycode %02x\n", keycode );
+        reenable_spi( spi_default );
     }
 #endif
 }

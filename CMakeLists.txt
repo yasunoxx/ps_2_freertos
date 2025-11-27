@@ -38,7 +38,8 @@ add_executable(${BUILD_TARGET}
 
 # pico_generate_pio_header(${BUILD_TARGET} ${CMAKE_CURRENT_LIST_DIR}/ps_2.pio)
 
-pico_enable_stdio_usb(${BUILD_TARGET} 1)
+pico_enable_stdio_usb( ${BUILD_TARGET} 0 )
+pico_enable_stdio_uart( ${BUILD_TARGET} 1 )
 
 if(PICO_CYW43_SUPPORTED)
 	# For led support on pico_w
