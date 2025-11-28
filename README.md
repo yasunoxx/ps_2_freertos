@@ -9,17 +9,18 @@ Tool                    | Description
 :-----------------------|:---------------------------------------------------
 **target**              | RP2040(pico, pico_w, etc ...)
 **pico-sdk**            | [raspberrypi/pico-sdk](https://github.com/raspberrypi/pico-sdk)
+**FreeRTOS**            | FreeRTOSv202406.01-LTS[FreeRTOS/FreeRTOS](https://github.com/FreeRTOS/FreeRTOS)
 
 
 ## Status(進捗状況)
-- 現在は、spi_slave.c内部の無限ループ内で、PS/2キーボードからのコードを読んで、Serial0に出力しています。これをSPI受信割り込みにして、FreeRTOS側と非同期に動作させる予定です。
-- FreeRTOS側は、現在動作させていません。動作させていても構わないんですけどね。
+- 現在は、spi_slave.c内部のISRで、PS/2キーボードからのコードを読んでBuffer[]に格納、buffer_taskでBuffer[]にデータが追加されていればSerial0に出力しています。SPI側は受信割込で、FreeRTOS側と非同期に動作させています。
+- メッセージキュー部分はデバッグ中です。いまの所は必要ないんですけどね。
 
 
 ## TODO(今後の話)
 - 公式の回路図が必要？("picotool info -bp *.uf2"で十分なのでは？)
 - PS/2キーコードのパリティチェックは、たぶん必要。今は何もしていない。
-- USBキーボード対応は、他の人にお任せします(私は、やりたくない)。
+- USBキーボード対応は、他の人にお任せします(私は、やりません)。
 
 
 ## LICENSE(ライセンス)
