@@ -34,8 +34,14 @@
 #include "pico/binary_info.h"
 #include "hardware/spi.h"
 // and rp2040/hardware_structs/include/hardware/structs/spi.h
-// and rp2040/hardware_regs/include/hardware/regs/spi.h
+#include "hardware/regs/spi.h"
+#include "hardware/irq.h"
+
+#include "buffer.h"
+// or pico/util/queue.h ??
 #include "spi_slave.h"
+
+static void on_spi_rx( void );
 
 void reenable_spi( spi_inst_t *spi )
 {
@@ -46,16 +52,42 @@ void reenable_spi( spi_inst_t *spi )
     hw_set_bits(&spi_get_hw(spi)->cr1, SPI_SSPCR1_SSE_BITS);
 }
 
-int spi_main()
+static inline void spi_set_irqs_enabled( int spi_irq )
 {
-    // Enable UART so we can print
-//    stdio_init_all(); // in ps_2_frertos.c
+    if( spi_irq == SPI0_IRQ )
+    {
+        spi0_hw->imsc = ( true << SPI_SSPIMSC_RXIM_LSB ) |
+                        ( true << SPI_SSPIMSC_RTIM_LSB );
+    }
+}
+
+// backwards compatibility with SDK version < 2.0.0
+static inline void spi_set_irq_enables( int spi_irq )
+{
+    spi_set_irqs_enabled( spi_irq );
+}
+
+void set_irq_spi( spi_inst_t *spi )
+{
+    // Set up a RX interrupt
+    int SPI_IRQ = SPI0_IRQ;
+
+    // And set up and enable the interrupt handlers
+    irq_set_exclusive_handler( SPI_IRQ, on_spi_rx );
+    irq_set_enabled( SPI_IRQ, true );
+
+    // Now enable the UART to send interrupts - RX only
+    spi_set_irq_enables( SPI_IRQ );
+}
+
+int SPI_Init()
+{
 #if !defined(spi_default) || !defined(PICO_DEFAULT_SPI_SCK_PIN) || !defined(PICO_DEFAULT_SPI_TX_PIN) || !defined(PICO_DEFAULT_SPI_RX_PIN) || !defined(PICO_DEFAULT_SPI_CSN_PIN)
 #warning spi/spi_slave example requires a board with SPI pins
     puts("Default SPI pins were not defined");
 #else
 
-    printf("SPI slave example\n");
+    printf("SPI initialize\n");
 
     // Enable SPI 0 at 1 MHz and connect to GPIOs
     spi_init( spi_default, 800 * 1000 );
@@ -76,58 +108,66 @@ int spi_main()
             GPIO_FUNC_SPI
     ) );
 
-    uint16_t in_buf[ BUF_LEN ];
+    set_irq_spi( spi_default );
+//    while( 1 );
+#endif
+
+    return 0;
+}
+
+// #define DEBUG
+static void on_spi_rx()
+{
+    uint16_t in_buf[ 2 ];
 
 #define PS_2_STARTBIT   0b010000000000
 #define PS_2_PARITYBIT  0b000000000010
 #define PS_2_STOPBIT    0b000000000001
-    while( 1 )
-    {
-        // Write the output buffer to MISO, and at the same time read from MOSI.
-        // spi_write16_blocking( spi_default, out_buf, BUF_LEN );
-        spi_read16_blocking( spi_default, 0, in_buf, 1 );
-        printf( "%04x -> ", in_buf[ 0 ] );
-        uint8_t keytmp = ( in_buf[ 0 ] >> 2 ) & 0x0FF;
-        uint8_t keycode = 0;
-        // rotate MSB first -> LSB first
-        if( ( keytmp & 0b10000000 ) != 0 ) keycode |=        0b1;
-        if( ( keytmp &  0b1000000 ) != 0 ) keycode |=       0b10;
-        if( ( keytmp &   0b100000 ) != 0 ) keycode |=      0b100;
-        if( ( keytmp &    0b10000 ) != 0 ) keycode |=     0b1000;
-        if( ( keytmp &     0b1000 ) != 0 ) keycode |=    0b10000;
-        if( ( keytmp &      0b100 ) != 0 ) keycode |=   0b100000;
-        if( ( keytmp &       0b10 ) != 0 ) keycode |=  0b1000000;
-        if( ( keytmp &        0b1 ) != 0 ) keycode |= 0b10000000;
+
+    spi_read16_blocking( spi_default, 0, in_buf, 1 );
+#ifdef DEBUG
+    printf( "%04x -> ", in_buf[ 0 ] );
+#endif
+    volatile uint8_t keytmp = ( in_buf[ 0 ] >> 2 ) & 0x0FF;
+    volatile uint8_t keycode = 0;
+    // rotate MSB first -> LSB first
+    if( ( keytmp & 0b10000000 ) != 0 ) keycode |=        0b1;
+    if( ( keytmp &  0b1000000 ) != 0 ) keycode |=       0b10;
+    if( ( keytmp &   0b100000 ) != 0 ) keycode |=      0b100;
+    if( ( keytmp &    0b10000 ) != 0 ) keycode |=     0b1000;
+    if( ( keytmp &     0b1000 ) != 0 ) keycode |=    0b10000;
+    if( ( keytmp &      0b100 ) != 0 ) keycode |=   0b100000;
+    if( ( keytmp &       0b10 ) != 0 ) keycode |=  0b1000000;
+    if( ( keytmp &        0b1 ) != 0 ) keycode |= 0b10000000;
 
 #ifdef DEBUG
-        if( ( in_buf[ 0 ] & PS_2_STARTBIT ) == 0 )
-        {
-            printf( "o" );
-        }
-        else
-        {
-            printf( "x" );
-        }
-        printf( "%08b", keytmp );
-        if( ( in_buf[ 0 ] & PS_2_PARITYBIT ) == 0 )
-        {
-            printf( "P" );
-        }
-        else
-        {
-            printf( "X" );
-        }
-        if( ( in_buf[ 0 ] & PS_2_STOPBIT ) == 0 )
-        {
-            printf( "x " );
-        }
-        else
-        {
-            printf( "o " );
-        }
-#endif
-        printf( "keycode %02x\n", keycode );
-        reenable_spi( spi_default );
+    if( ( in_buf[ 0 ] & PS_2_STARTBIT ) == 0 )
+    {
+        printf( "o" );
+    }
+    else
+    {
+        printf( "x" );
+    }
+    printf( "%08b", keytmp );
+    if( ( in_buf[ 0 ] & PS_2_PARITYBIT ) == 0 )
+    {
+        printf( "P" );
+    }
+    else
+    {
+        printf( "X" );
+    }
+    if( ( in_buf[ 0 ] & PS_2_STOPBIT ) == 0 )
+    {
+        printf( "x " );
+    }
+    else
+    {
+        printf( "o " );
     }
 #endif
+//    printf( "keycode %02x\n", keycode );
+    Buffer_Write1Byte( keycode );
+    reenable_spi( spi_default );
 }

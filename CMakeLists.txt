@@ -7,7 +7,6 @@ set(PICO_BOARD pico)
 ## or
 #set(PICO_BOARD pico_w)
 
-
 set(PICO_SDK_PATH ${DIR_WORK}/RP2040/pico-sdk)
 set(FREERTOS_KERNEL_PATH ${DIR_WORK}/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel)
 

@@ -25,6 +25,6 @@
 
 // modify for ps_2_freertos (C)2025 yasunoxx▼Julia
 
-#define BUF_LEN         0x100
+#define BUF_LEN         0x10
 
-extern void printbuf( uint16_t buf[], size_t len );
+extern int SPI_Init( void );

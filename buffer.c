@@ -50,3 +50,4 @@ int16_t Buffer_Read1Byte()
 
     return ( int16_t )data;
 }
+
