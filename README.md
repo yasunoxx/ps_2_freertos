@@ -22,15 +22,20 @@ Tool                    | Description
 
 
 ## TODO(今後の話)
+- 現状、spi_slave.cやbuffer.c自体はthread safe＊ではない＊。thread safetyにするべき。
+    - →具体的には、全ての動的変数についてpvPortMalloc()/vPortMfree()を使う、べき。
+    - →明らかにmemmang/heap_*.cを理解するべきであり、わかんない人は触らない方が吉。
 - 公式の回路図が必要？("picotool info -bp *.uf2"で十分なのでは？)
-- PS/2キーコードのパリティチェックは、たぶん必要。今は何もしていない。
-- USBキーボード対応は、他の人にお任せします(私は、やりません)。
+    - →CLKとDATに、直列に150Rが入っているだけ。CLKはpullup＊していない＊。
+- PS/2キーコードのパリティチェックは、たぶん必要。今は何も＊していない＊。
+    - →パリティエラーの際の処理が未定義。読み飛ばすしかない、とは思うけど。
+- USBキーボード対応は、他の人にお任せします(私は、やりません。期待しないで下さい)。
 
 
 ## LICENSE(ライセンス)
 - ソースをbuildするには、当然ですがpico-sdk [raspberrypi/pico-sdk](https://github.com/raspberrypi/pico-sdk)が必要です。spi_slave.cは、pico-examples [raspberrypi/pico-examples](https://github.com/raspberrypi/pico-examples)内のコードを参考に(ほぼパクり)させて頂きました。
 
-- ソースをbuildするには、FreeRTOS-Kernel(FreeRTOSv202406.01-LTS)が必要です。
+- ソースをbuildするには、FreeRTOS-Kernel(FreeRTOSv202406.01-LTS以降)が必要です。
 [FreeRTOS/FreeRTOS](https://github.com/FreeRTOS/FreeRTOS)
 
 - 私(yasunoxx▼Julia)が書いたプログラムは、MITライセンスで開示しています。本プログラム [ps_2_freertos](https://github.com/yasunoxx/ps_2_freertos)を使用した/使用しない事による全ての結果について、上記権利者と私は何の保証も賠償も致しません。
