@@ -70,7 +70,7 @@ static inline void spi_set_irq_enables( int spi_irq )
 void set_irq_spi( spi_inst_t *spi )
 {
     // Set up a RX interrupt
-    int SPI_IRQ = SPI0_IRQ;
+    static int SPI_IRQ = SPI0_IRQ;
 
     // And set up and enable the interrupt handlers
     irq_set_exclusive_handler( SPI_IRQ, on_spi_rx );
@@ -115,33 +115,34 @@ int SPI_Init()
     return 0;
 }
 
+
+uint16_t SPI_Receive_Buf[ 2 ];
+volatile uint8_t SPI_Keycode = 0;
 // #define DEBUG
 static void on_spi_rx()
 {
-    uint16_t in_buf[ 2 ];
 
 #define PS_2_STARTBIT   0b010000000000
 #define PS_2_PARITYBIT  0b000000000010
 #define PS_2_STOPBIT    0b000000000001
 
-    spi_read16_blocking( spi_default, 0, in_buf, 1 );
+    spi_read16_blocking( spi_default, 0, SPI_Receive_Buf, 1 );
 #ifdef DEBUG
-    printf( "%04x -> ", in_buf[ 0 ] );
+    printf( "%04x -> ", SPI_Receive_Buf[ 0 ] );
 #endif
-    volatile uint8_t keytmp = ( in_buf[ 0 ] >> 2 ) & 0x0FF;
-    volatile uint8_t keycode = 0;
+    volatile uint8_t keytmp = ( SPI_Receive_Buf[ 0 ] >> 2 ) & 0x0FF;
     // rotate MSB first -> LSB first
-    if( ( keytmp & 0b10000000 ) != 0 ) keycode |=        0b1;
-    if( ( keytmp &  0b1000000 ) != 0 ) keycode |=       0b10;
-    if( ( keytmp &   0b100000 ) != 0 ) keycode |=      0b100;
-    if( ( keytmp &    0b10000 ) != 0 ) keycode |=     0b1000;
-    if( ( keytmp &     0b1000 ) != 0 ) keycode |=    0b10000;
-    if( ( keytmp &      0b100 ) != 0 ) keycode |=   0b100000;
-    if( ( keytmp &       0b10 ) != 0 ) keycode |=  0b1000000;
-    if( ( keytmp &        0b1 ) != 0 ) keycode |= 0b10000000;
+    if( ( keytmp & 0b10000000 ) != 0 ) SPI_Keycode |=        0b1;
+    if( ( keytmp &  0b1000000 ) != 0 ) SPI_Keycode |=       0b10;
+    if( ( keytmp &   0b100000 ) != 0 ) SPI_Keycode |=      0b100;
+    if( ( keytmp &    0b10000 ) != 0 ) SPI_Keycode |=     0b1000;
+    if( ( keytmp &     0b1000 ) != 0 ) SPI_Keycode |=    0b10000;
+    if( ( keytmp &      0b100 ) != 0 ) SPI_Keycode |=   0b100000;
+    if( ( keytmp &       0b10 ) != 0 ) SPI_Keycode |=  0b1000000;
+    if( ( keytmp &        0b1 ) != 0 ) SPI_Keycode |= 0b10000000;
 
 #ifdef DEBUG
-    if( ( in_buf[ 0 ] & PS_2_STARTBIT ) == 0 )
+    if( ( SPI_Receive_Buf[ 0 ] & PS_2_STARTBIT ) == 0 )
     {
         printf( "o" );
     }
@@ -150,7 +151,7 @@ static void on_spi_rx()
         printf( "x" );
     }
     printf( "%08b", keytmp );
-    if( ( in_buf[ 0 ] & PS_2_PARITYBIT ) == 0 )
+    if( ( SPI_Receive_Buf[ 0 ] & PS_2_PARITYBIT ) == 0 )
     {
         printf( "P" );
     }
@@ -158,7 +159,7 @@ static void on_spi_rx()
     {
         printf( "X" );
     }
-    if( ( in_buf[ 0 ] & PS_2_STOPBIT ) == 0 )
+    if( ( SPI_Receive_Buf[ 0 ] & PS_2_STOPBIT ) == 0 )
     {
         printf( "x " );
     }
@@ -167,7 +168,7 @@ static void on_spi_rx()
         printf( "o " );
     }
 #endif
-//    printf( "keycode %02x\n", keycode );
-    Buffer_Write1Byte( keycode );
+//    printf( "SPI_Keycode %02x\n", SPI_Keycode );
+    Buffer_Write1Byte( SPI_Keycode );
     reenable_spi( spi_default );
 }

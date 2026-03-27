@@ -2937,34 +2937,34 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000010000450       0x28 CMakeFiles/ps_2_freertos.dir/ps_2_freertos.c.o
                 0x0000000010000450                main
  .text.on_spi_rx
-                0x0000000010000478       0xbc CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+                0x0000000010000478       0xc0 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
  .text.SPI_Init
-                0x0000000010000534       0x90 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
-                0x0000000010000534                SPI_Init
+                0x0000000010000538       0x90 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+                0x0000000010000538                SPI_Init
  .text.Buffer_Init
-                0x00000000100005c4       0x20 CMakeFiles/ps_2_freertos.dir/buffer.c.o
-                0x00000000100005c4                Buffer_Init
+                0x00000000100005c8       0x20 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+                0x00000000100005c8                Buffer_Init
  .text.Buffer_Write1Byte
-                0x00000000100005e4       0x38 CMakeFiles/ps_2_freertos.dir/buffer.c.o
-                0x00000000100005e4                Buffer_Write1Byte
+                0x00000000100005e8       0x38 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+                0x00000000100005e8                Buffer_Write1Byte
  .text.Buffer_Read1Byte
-                0x000000001000061c       0x38 CMakeFiles/ps_2_freertos.dir/buffer.c.o
-                0x000000001000061c                Buffer_Read1Byte
- .text.panic    0x0000000010000654       0x30 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-                0x0000000010000654                panic
+                0x0000000010000620       0x38 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+                0x0000000010000620                Buffer_Read1Byte
+ .text.panic    0x0000000010000658       0x30 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x0000000010000658                panic
  .text.panic_unsupported
-                0x0000000010000684        0xc CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-                0x0000000010000684                panic_unsupported
+                0x0000000010000688        0xc CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x0000000010000688                panic_unsupported
  .text.pvPortMalloc
-                0x0000000010000690      0x114 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
-                0x0000000010000690                pvPortMalloc
+                0x0000000010000694      0x114 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x0000000010000694                pvPortMalloc
  .text.vPortFree
-                0x00000000100007a4       0x8c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
-                0x00000000100007a4                vPortFree
+                0x00000000100007a8       0x8c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x00000000100007a8                vPortFree
  .text.vPortSVCHandler
-                0x0000000010000830        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
-                0x0000000010000830                vPortSVCHandler
- *fill*         0x0000000010000834        0xc 
+                0x0000000010000834        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+                0x0000000010000834                vPortSVCHandler
+ *fill*         0x0000000010000838        0x8 
  .text.vPortStartFirstTask
                 0x0000000010000840       0x38 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
  .text.prvFIFOInterruptHandler
@@ -3826,7 +3826,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.tcommon)
                 0x00000000200002e8                __tls_end = .
 
-.bss            0x00000000200002e8    0x20830 load address 0x0000000010007d30
+.bss            0x00000000200002e8    0x20834 load address 0x0000000010007d30
                 0x00000000200002e8                . = ALIGN (0x4)
                 0x00000000200002e8                __tbss_end = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -3842,134 +3842,140 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  .bss           0x00000000200006a8       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
  .bss.Buffer    0x00000000200006c4       0x40 CMakeFiles/ps_2_freertos.dir/buffer.c.o
                 0x00000000200006c4                Buffer
+ .bss.SPI_Receive_Buf
+                0x0000000020000704        0x4 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+                0x0000000020000704                SPI_Receive_Buf
  .bss.chars_available_callback
-                0x0000000020000704        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
- .bss.chars_available_param
                 0x0000000020000708        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
- .bss.claimed   0x000000002000070c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .bss.claimed   0x0000000020000710        0x1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- *fill*         0x0000000020000711        0x3 
+ .bss.chars_available_param
+                0x000000002000070c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+ .bss.claimed   0x0000000020000710        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .bss.claimed   0x0000000020000714        0x1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ *fill*         0x0000000020000715        0x3 
  .bss.configured_freq
-                0x0000000020000714       0x28 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .bss.drivers   0x000000002000073c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .bss.filter    0x0000000020000740        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x0000000020000718       0x28 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .bss.drivers   0x0000000020000740        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .bss.filter    0x0000000020000744        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .bss.lazy_vsnprintf
-                0x0000000020000744        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .bss.pools     0x0000000020000748       0x10 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
+                0x0000000020000748        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .bss.pools     0x000000002000074c       0x10 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
  .bss.pxCurrentTCBs
-                0x0000000020000758        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
-                0x0000000020000758                pxCurrentTCBs
+                0x000000002000075c        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x000000002000075c                pxCurrentTCBs
  .bss.pxCurrentTimerList
-                0x0000000020000760        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+                0x0000000020000764        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
  .bss.pxDelayedTaskList
-                0x0000000020000764        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.pxEnd     0x0000000020000768        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x0000000020000768        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .bss.pxEnd     0x000000002000076c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
  .bss.pxOverflowDelayedTaskList
-                0x000000002000076c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020000770        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.pxOverflowTimerList
-                0x0000000020000770        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+                0x0000000020000774        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
  .bss.pxReadyTasksLists
-                0x0000000020000774      0x280 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020000778      0x280 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.pxYieldSpinLock
-                0x00000000200009f4        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+                0x00000000200009f8        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
  .bss.sf_clz_func
-                0x00000000200009fc        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
-                0x00000000200009fc                sf_clz_func
+                0x0000000020000a00        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x0000000020000a00                sf_clz_func
  .bss.sleep_notifier
-                0x0000000020000a00        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
+                0x0000000020000a04        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
  .bss.uart_char_to_line_feed
-                0x0000000020000a04        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
-                0x0000000020000a04                uart_char_to_line_feed
+                0x0000000020000a08        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
+                0x0000000020000a08                uart_char_to_line_feed
  .bss.uart_instance
-                0x0000000020000a08        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
- .bss.ucHeap    0x0000000020000a0c    0x20000 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x0000000020000a0c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+ .bss.ucHeap    0x0000000020000a10    0x20000 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
  .bss.ucOwnedByCore.1
-                0x0000000020020a0c        0x2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- *fill*         0x0000000020020a0e        0x2 
- .bss.ucRecursionCountByLock.0
                 0x0000000020020a10        0x2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  *fill*         0x0000000020020a12        0x2 
+ .bss.ucRecursionCountByLock.0
+                0x0000000020020a14        0x2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ *fill*         0x0000000020020a16        0x2 
  .bss.ulYieldSpinLockSaveValue
-                0x0000000020020a14        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+                0x0000000020020a18        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
  .bss.uxCriticalNestings
-                0x0000000020020a1c        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
-                0x0000000020020a1c                uxCriticalNestings
+                0x0000000020020a20        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+                0x0000000020020a20                uxCriticalNestings
  .bss.uxCurrentNumberOfTasks
-                0x0000000020020a24        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.uxDeletedTasksWaitingCleanUp
                 0x0000000020020a28        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.uxSchedulerSuspended
+ .bss.uxDeletedTasksWaitingCleanUp
                 0x0000000020020a2c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.uxTaskNumber
+ .bss.uxSchedulerSuspended
                 0x0000000020020a30        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.uxTopReadyPriority
+ .bss.uxTaskNumber
                 0x0000000020020a34        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .bss.uxTopReadyPriority
+                0x0000000020020a38        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xActiveTimerList1
-                0x0000000020020a38       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+                0x0000000020020a3c       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
  .bss.xActiveTimerList2
-                0x0000000020020a4c       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+                0x0000000020020a50       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
  .bss.xDelayedTaskList1
-                0x0000000020020a60       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020a64       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xDelayedTaskList2
-                0x0000000020020a74       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020a78       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xEventGroup
-                0x0000000020020a88        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+                0x0000000020020a8c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
  .bss.xFreeBytesRemaining
-                0x0000000020020a8c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x0000000020020a90        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
  .bss.xIdleTaskHandles
-                0x0000000020020a90        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020a94        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xLastTime.0
-                0x0000000020020a98        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+                0x0000000020020a9c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
  .bss.xMinimumEverFreeBytesRemaining
-                0x0000000020020a9c        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x0000000020020aa0        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
  .bss.xNextTaskUnblockTime
-                0x0000000020020aa0        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.xNumOfOverflows
                 0x0000000020020aa4        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .bss.xNumOfOverflows
+                0x0000000020020aa8        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xNumberOfSuccessfulAllocations
-                0x0000000020020aa8        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
- .bss.xNumberOfSuccessfulFrees
                 0x0000000020020aac        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+ .bss.xNumberOfSuccessfulFrees
+                0x0000000020020ab0        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
  .bss.xPendedTicks
-                0x0000000020020ab0        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020ab4        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xPendingReadyList
-                0x0000000020020ab4       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020ab8       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xSchedulerRunning
-                0x0000000020020ac8        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .bss.xStart    0x0000000020020acc        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+                0x0000000020020acc        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .bss.xStart    0x0000000020020ad0        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
  .bss.xSuspendedTaskList
-                0x0000000020020ad4       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020ad8       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xTasksWaitingTermination
-                0x0000000020020ae8       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020aec       0x14 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xTickCount
-                0x0000000020020afc        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020b00        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.xTimerQueue
-                0x0000000020020b00        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
- .bss.xTimerTaskHandle
                 0x0000000020020b04        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+ .bss.xTimerTaskHandle
+                0x0000000020020b08        0x4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
  .bss.xYieldPendings
-                0x0000000020020b08        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+                0x0000000020020b0c        0x8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
  .bss.Buffer_ReadPtr
-                0x0000000020020b10        0x2 CMakeFiles/ps_2_freertos.dir/buffer.c.o
-                0x0000000020020b10                Buffer_ReadPtr
+                0x0000000020020b14        0x2 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+                0x0000000020020b14                Buffer_ReadPtr
  .bss.Buffer_WritePtr
-                0x0000000020020b12        0x2 CMakeFiles/ps_2_freertos.dir/buffer.c.o
-                0x0000000020020b12                Buffer_WritePtr
+                0x0000000020020b16        0x2 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+                0x0000000020020b16                Buffer_WritePtr
  .bss.Buffer_WriteReady
-                0x0000000020020b14        0x1 CMakeFiles/ps_2_freertos.dir/buffer.c.o
-                0x0000000020020b14                Buffer_WriteReady
+                0x0000000020020b18        0x1 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+                0x0000000020020b18                Buffer_WriteReady
+ .bss.SPI_Keycode
+                0x0000000020020b19        0x1 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+                0x0000000020020b19                SPI_Keycode
  .bss.irq_handler_chain_free_slot_head
-                0x0000000020020b15        0x1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x0000000020020b1a        0x1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
  *(COMMON)
-                0x0000000020020b18                . = ALIGN (0x4)
- *fill*         0x0000000020020b16        0x2 
-                0x0000000020020b18                __bss_end__ = .
+                0x0000000020020b1c                . = ALIGN (0x4)
+ *fill*         0x0000000020020b1b        0x1 
+                0x0000000020020b1c                __bss_end__ = .
 
-.heap           0x0000000020020b18      0x800 load address 0x0000000010007d30
-                0x0000000020020b18                __end__ = .
-                0x0000000020020b18                end = __end__
+.heap           0x0000000020020b1c      0x800 load address 0x0000000010007d30
+                0x0000000020020b1c                __end__ = .
+                0x0000000020020b1c                end = __end__
  *(.heap*)
- .heap          0x0000000020020b18      0x800 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .heap          0x0000000020020b1c      0x800 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
                 0x0000000020040000                __HeapLimit = (ORIGIN (RAM) + LENGTH (RAM))
 
 .scratch_x      0x0000000020040000        0x0 load address 0x0000000010007d30
@@ -4263,109 +4269,109 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtend.o
 
-.debug_info     0x0000000000000000    0x32f3d
+.debug_info     0x0000000000000000    0x3305e
  .debug_info    0x0000000000000000      0x6ed CMakeFiles/ps_2_freertos.dir/ps_2_freertos.c.o
- .debug_info    0x00000000000006ed      0xb92 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
- .debug_info    0x000000000000127f      0x185 CMakeFiles/ps_2_freertos.dir/buffer.c.o
- .debug_info    0x0000000000001404      0x19c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_info    0x00000000000015a0      0x5ec CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
- .debug_info    0x0000000000001b8c     0x1928 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
- .debug_info    0x00000000000034b4      0xe12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
- .debug_info    0x00000000000042c6      0x2cf CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
- .debug_info    0x0000000000004595     0x2f0a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
- .debug_info    0x000000000000749f     0xa971 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .debug_info    0x0000000000011e10     0x1abe CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
- .debug_info    0x00000000000138ce     0x28ea CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_info    0x00000000000161b8      0xa39 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_info    0x0000000000016bf1      0x3dd CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_info    0x0000000000016fce      0x242 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_info    0x0000000000017210     0x24d4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
- .debug_info    0x00000000000196e4     0x21fa CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_info    0x000000000001b8de      0x154 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_info    0x000000000001ba32     0x23be CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_info    0x000000000001ddf0     0x4863 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
- .debug_info    0x0000000000022653     0x2ac2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_info    0x0000000000025115      0x4f9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_info    0x000000000002560e      0x242 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_info    0x0000000000025850      0x4a4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_info    0x0000000000025cf4      0x1c5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_info    0x0000000000025eb9      0x6fa CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
- .debug_info    0x00000000000265b3     0x1f49 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
- .debug_info    0x00000000000284fc     0x19c5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
- .debug_info    0x0000000000029ec1      0x208 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_info    0x000000000002a0c9      0x7c4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_info    0x000000000002a88d      0x701 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_info    0x000000000002af8e       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_info    0x000000000002afb0       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_info    0x000000000002afd2       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_info    0x000000000002aff4      0x218 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_info    0x000000000002b20c       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_info    0x000000000002b22e       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_info    0x000000000002b250      0x222 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_info    0x000000000002b472       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_info    0x000000000002b494      0x540 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
- .debug_info    0x000000000002b9d4       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_info    0x000000000002b9f6      0x2cb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_info    0x000000000002bcc1     0x21b1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_info    0x000000000002de72       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_info    0x000000000002de94      0xb4e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_info    0x000000000002e9e2     0x1cb3 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_info    0x0000000000030695     0x14df CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
- .debug_info    0x0000000000031b74     0x12b5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
- .debug_info    0x0000000000032e29       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0000000000032e4f       0xee /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+ .debug_info    0x00000000000006ed      0xcb3 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+ .debug_info    0x00000000000013a0      0x185 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+ .debug_info    0x0000000000001525      0x19c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_info    0x00000000000016c1      0x5ec CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+ .debug_info    0x0000000000001cad     0x1928 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+ .debug_info    0x00000000000035d5      0xe12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
+ .debug_info    0x00000000000043e7      0x2cf CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
+ .debug_info    0x00000000000046b6     0x2f0a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
+ .debug_info    0x00000000000075c0     0xa971 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .debug_info    0x0000000000011f31     0x1abe CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+ .debug_info    0x00000000000139ef     0x28ea CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_info    0x00000000000162d9      0xa39 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_info    0x0000000000016d12      0x3dd CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_info    0x00000000000170ef      0x242 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_info    0x0000000000017331     0x24d4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+ .debug_info    0x0000000000019805     0x21fa CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_info    0x000000000001b9ff      0x154 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_info    0x000000000001bb53     0x23be CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_info    0x000000000001df11     0x4863 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
+ .debug_info    0x0000000000022774     0x2ac2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_info    0x0000000000025236      0x4f9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_info    0x000000000002572f      0x242 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_info    0x0000000000025971      0x4a4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_info    0x0000000000025e15      0x1c5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_info    0x0000000000025fda      0x6fa CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
+ .debug_info    0x00000000000266d4     0x1f49 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+ .debug_info    0x000000000002861d     0x19c5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
+ .debug_info    0x0000000000029fe2      0x208 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_info    0x000000000002a1ea      0x7c4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_info    0x000000000002a9ae      0x701 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_info    0x000000000002b0af       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_info    0x000000000002b0d1       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_info    0x000000000002b0f3       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_info    0x000000000002b115      0x218 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_info    0x000000000002b32d       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_info    0x000000000002b34f       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_info    0x000000000002b371      0x222 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_info    0x000000000002b593       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_info    0x000000000002b5b5      0x540 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
+ .debug_info    0x000000000002baf5       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_info    0x000000000002bb17      0x2cb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_info    0x000000000002bde2     0x21b1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_info    0x000000000002df93       0x22 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_info    0x000000000002dfb5      0xb4e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_info    0x000000000002eb03     0x1cb3 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_info    0x00000000000307b6     0x14df CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+ .debug_info    0x0000000000031c95     0x12b5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+ .debug_info    0x0000000000032f4a       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0000000000032f70       0xee /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
-.debug_abbrev   0x0000000000000000     0x74ff
+.debug_abbrev   0x0000000000000000     0x7509
  .debug_abbrev  0x0000000000000000      0x1a3 CMakeFiles/ps_2_freertos.dir/ps_2_freertos.c.o
- .debug_abbrev  0x00000000000001a3      0x332 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
- .debug_abbrev  0x00000000000004d5       0xf0 CMakeFiles/ps_2_freertos.dir/buffer.c.o
- .debug_abbrev  0x00000000000005c5       0xf4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_abbrev  0x00000000000006b9      0x291 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
- .debug_abbrev  0x000000000000094a      0x554 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
- .debug_abbrev  0x0000000000000e9e      0x246 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
- .debug_abbrev  0x00000000000010e4       0xff CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
- .debug_abbrev  0x00000000000011e3      0x373 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
- .debug_abbrev  0x0000000000001556      0x52a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .debug_abbrev  0x0000000000001a80      0x3aa CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
- .debug_abbrev  0x0000000000001e2a      0x49f CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_abbrev  0x00000000000022c9      0x2e6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_abbrev  0x00000000000025af      0x1de CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_abbrev  0x000000000000278d      0x1b2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_abbrev  0x000000000000293f      0x4b6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
- .debug_abbrev  0x0000000000002df5      0x588 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_abbrev  0x000000000000337d       0xee CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_abbrev  0x000000000000346b      0x3b8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_abbrev  0x0000000000003823      0x606 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
- .debug_abbrev  0x0000000000003e29      0x49d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_abbrev  0x00000000000042c6      0x1c6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_abbrev  0x000000000000448c      0x141 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_abbrev  0x00000000000045cd      0x1d9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_abbrev  0x00000000000047a6      0x118 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_abbrev  0x00000000000048be      0x2ae CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
- .debug_abbrev  0x0000000000004b6c      0x57a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
- .debug_abbrev  0x00000000000050e6      0x315 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
- .debug_abbrev  0x00000000000053fb      0x16c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_abbrev  0x0000000000005567      0x20c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_abbrev  0x0000000000005773      0x246 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_abbrev  0x00000000000059b9       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_abbrev  0x00000000000059cb       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_abbrev  0x00000000000059dd       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_abbrev  0x00000000000059ef      0x15c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_abbrev  0x0000000000005b4b       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_abbrev  0x0000000000005b5d       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_abbrev  0x0000000000005b6f      0x15c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_abbrev  0x0000000000005ccb       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_abbrev  0x0000000000005cdd      0x1b4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
- .debug_abbrev  0x0000000000005e91       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_abbrev  0x0000000000005ea3       0xad CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_abbrev  0x0000000000005f50      0x517 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_abbrev  0x0000000000006467       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_abbrev  0x0000000000006479      0x315 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_abbrev  0x000000000000678e      0x58d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_abbrev  0x0000000000006d1b      0x43b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
- .debug_abbrev  0x0000000000007156      0x306 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
- .debug_abbrev  0x000000000000745c       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_abbrev  0x0000000000007470       0x8f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+ .debug_abbrev  0x00000000000001a3      0x33c CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+ .debug_abbrev  0x00000000000004df       0xf0 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+ .debug_abbrev  0x00000000000005cf       0xf4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_abbrev  0x00000000000006c3      0x291 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+ .debug_abbrev  0x0000000000000954      0x554 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+ .debug_abbrev  0x0000000000000ea8      0x246 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
+ .debug_abbrev  0x00000000000010ee       0xff CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
+ .debug_abbrev  0x00000000000011ed      0x373 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
+ .debug_abbrev  0x0000000000001560      0x52a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .debug_abbrev  0x0000000000001a8a      0x3aa CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+ .debug_abbrev  0x0000000000001e34      0x49f CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_abbrev  0x00000000000022d3      0x2e6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_abbrev  0x00000000000025b9      0x1de CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_abbrev  0x0000000000002797      0x1b2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_abbrev  0x0000000000002949      0x4b6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+ .debug_abbrev  0x0000000000002dff      0x588 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_abbrev  0x0000000000003387       0xee CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_abbrev  0x0000000000003475      0x3b8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_abbrev  0x000000000000382d      0x606 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
+ .debug_abbrev  0x0000000000003e33      0x49d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_abbrev  0x00000000000042d0      0x1c6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_abbrev  0x0000000000004496      0x141 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_abbrev  0x00000000000045d7      0x1d9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_abbrev  0x00000000000047b0      0x118 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_abbrev  0x00000000000048c8      0x2ae CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
+ .debug_abbrev  0x0000000000004b76      0x57a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+ .debug_abbrev  0x00000000000050f0      0x315 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
+ .debug_abbrev  0x0000000000005405      0x16c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_abbrev  0x0000000000005571      0x20c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_abbrev  0x000000000000577d      0x246 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_abbrev  0x00000000000059c3       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_abbrev  0x00000000000059d5       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_abbrev  0x00000000000059e7       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_abbrev  0x00000000000059f9      0x15c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_abbrev  0x0000000000005b55       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_abbrev  0x0000000000005b67       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_abbrev  0x0000000000005b79      0x15c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_abbrev  0x0000000000005cd5       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_abbrev  0x0000000000005ce7      0x1b4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
+ .debug_abbrev  0x0000000000005e9b       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_abbrev  0x0000000000005ead       0xad CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_abbrev  0x0000000000005f5a      0x517 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_abbrev  0x0000000000006471       0x12 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_abbrev  0x0000000000006483      0x315 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_abbrev  0x0000000000006798      0x58d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_abbrev  0x0000000000006d25      0x43b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+ .debug_abbrev  0x0000000000007160      0x306 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+ .debug_abbrev  0x0000000000007466       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x000000000000747a       0x8f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
 .debug_loc      0x0000000000000000    0x2d5ca
  .debug_loc     0x0000000000000000       0xe3 CMakeFiles/ps_2_freertos.dir/ps_2_freertos.c.o
@@ -4559,157 +4565,157 @@ LOAD linker stubs
  .debug_ranges  0x000000000000db08      0x4c0 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
  .debug_ranges  0x000000000000dfc8      0x660 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
 
-.debug_line     0x0000000000000000    0x2a622
+.debug_line     0x0000000000000000    0x2a62a
  .debug_line    0x0000000000000000      0x4e9 CMakeFiles/ps_2_freertos.dir/ps_2_freertos.c.o
- .debug_line    0x00000000000004e9      0x7a6 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
- .debug_line    0x0000000000000c8f      0x17b CMakeFiles/ps_2_freertos.dir/buffer.c.o
- .debug_line    0x0000000000000e0a      0x219 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_line    0x0000000000001023      0x6a0 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
- .debug_line    0x00000000000016c3     0x126a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
- .debug_line    0x000000000000292d      0x99b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
- .debug_line    0x00000000000032c8      0x37b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
- .debug_line    0x0000000000003643     0x2542 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
- .debug_line    0x0000000000005b85     0xb463 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
- .debug_line    0x0000000000010fe8      0xe62 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
- .debug_line    0x0000000000011e4a     0x1c86 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_line    0x0000000000013ad0      0x8fd CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_line    0x00000000000143cd      0x486 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_line    0x0000000000014853      0x34b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_line    0x0000000000014b9e     0x1ca5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
- .debug_line    0x0000000000016843     0x166e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_line    0x0000000000017eb1      0x27f CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_line    0x0000000000018130     0x16d7 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_line    0x0000000000019807     0x2f90 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
- .debug_line    0x000000000001c797     0x1d64 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_line    0x000000000001e4fb      0x4eb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_line    0x000000000001e9e6      0x2d5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_line    0x000000000001ecbb      0x32e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_line    0x000000000001efe9      0x300 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_line    0x000000000001f2e9      0x53d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
- .debug_line    0x000000000001f826     0x1601 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
- .debug_line    0x0000000000020e27     0x1178 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
- .debug_line    0x0000000000021f9f      0x296 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_line    0x0000000000022235      0x4f5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_line    0x000000000002272a      0x51a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_line    0x0000000000022c44      0x143 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_line    0x0000000000022d87      0x2e8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_line    0x000000000002306f      0x439 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_line    0x00000000000234a8      0x36d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_line    0x0000000000023815      0x6b4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_line    0x0000000000023ec9      0x3f3 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_line    0x00000000000242bc      0x2c8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_line    0x0000000000024584      0x1da CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_line    0x000000000002475e      0x43a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
- .debug_line    0x0000000000024b98       0xd0 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_line    0x0000000000024c68      0x18d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_line    0x0000000000024df5     0x17e7 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_line    0x00000000000265dc       0xd5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_line    0x00000000000266b1      0x817 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_line    0x0000000000026ec8     0x1505 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_line    0x00000000000283cd      0xd75 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
- .debug_line    0x0000000000029142     0x130e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
- .debug_line    0x000000000002a450       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_line    0x000000000002a4b0      0x172 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+ .debug_line    0x00000000000004e9      0x7ae CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+ .debug_line    0x0000000000000c97      0x17b CMakeFiles/ps_2_freertos.dir/buffer.c.o
+ .debug_line    0x0000000000000e12      0x219 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_line    0x000000000000102b      0x6a0 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+ .debug_line    0x00000000000016cb     0x126a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+ .debug_line    0x0000000000002935      0x99b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
+ .debug_line    0x00000000000032d0      0x37b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
+ .debug_line    0x000000000000364b     0x2542 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
+ .debug_line    0x0000000000005b8d     0xb463 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .debug_line    0x0000000000010ff0      0xe62 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+ .debug_line    0x0000000000011e52     0x1c86 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_line    0x0000000000013ad8      0x8fd CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_line    0x00000000000143d5      0x486 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_line    0x000000000001485b      0x34b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_line    0x0000000000014ba6     0x1ca5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+ .debug_line    0x000000000001684b     0x166e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_line    0x0000000000017eb9      0x27f CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_line    0x0000000000018138     0x16d7 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_line    0x000000000001980f     0x2f90 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
+ .debug_line    0x000000000001c79f     0x1d64 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_line    0x000000000001e503      0x4eb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_line    0x000000000001e9ee      0x2d5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_line    0x000000000001ecc3      0x32e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_line    0x000000000001eff1      0x300 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_line    0x000000000001f2f1      0x53d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
+ .debug_line    0x000000000001f82e     0x1601 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+ .debug_line    0x0000000000020e2f     0x1178 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
+ .debug_line    0x0000000000021fa7      0x296 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_line    0x000000000002223d      0x4f5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_line    0x0000000000022732      0x51a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_line    0x0000000000022c4c      0x143 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_line    0x0000000000022d8f      0x2e8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_line    0x0000000000023077      0x439 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_line    0x00000000000234b0      0x36d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_line    0x000000000002381d      0x6b4 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_line    0x0000000000023ed1      0x3f3 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_line    0x00000000000242c4      0x2c8 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_line    0x000000000002458c      0x1da CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_line    0x0000000000024766      0x43a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
+ .debug_line    0x0000000000024ba0       0xd0 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_line    0x0000000000024c70      0x18d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_line    0x0000000000024dfd     0x17e7 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_line    0x00000000000265e4       0xd5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_line    0x00000000000266b9      0x817 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_line    0x0000000000026ed0     0x1505 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_line    0x00000000000283d5      0xd75 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+ .debug_line    0x000000000002914a     0x130e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+ .debug_line    0x000000000002a458       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x000000000002a4b8      0x172 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
 
-.debug_str      0x0000000000000000     0x820b
+.debug_str      0x0000000000000000     0x8220
  .debug_str     0x0000000000000000      0x677 CMakeFiles/ps_2_freertos.dir/ps_2_freertos.c.o
                                         0x6e8 (size before relaxing)
- .debug_str     0x0000000000000677      0x3ab CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
-                                        0x6ab (size before relaxing)
- .debug_str     0x0000000000000a22       0x65 CMakeFiles/ps_2_freertos.dir/buffer.c.o
+ .debug_str     0x0000000000000677      0x3c0 CMakeFiles/ps_2_freertos.dir/spi_slave.c.o
+                                        0x94d (size before relaxing)
+ .debug_str     0x0000000000000a37       0x65 CMakeFiles/ps_2_freertos.dir/buffer.c.o
                                         0x203 (size before relaxing)
- .debug_str     0x0000000000000a87       0xa1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_str     0x0000000000000a9c       0xa1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
                                         0x209 (size before relaxing)
- .debug_str     0x0000000000000b28      0x390 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
+ .debug_str     0x0000000000000b3d      0x390 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c.o
                                         0x515 (size before relaxing)
- .debug_str     0x0000000000000eb8      0x9f5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
+ .debug_str     0x0000000000000ecd      0x9f5 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/port.c.o
                                         0xdd7 (size before relaxing)
- .debug_str     0x00000000000018ad      0x3e6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
+ .debug_str     0x00000000000018c2      0x3e6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/event_groups.c.o
                                         0x6c8 (size before relaxing)
- .debug_str     0x0000000000001c93       0xb9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
+ .debug_str     0x0000000000001ca8       0xb9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/list.c.o
                                         0x2e4 (size before relaxing)
- .debug_str     0x0000000000001d4c      0x8cb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
+ .debug_str     0x0000000000001d61      0x8cb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/queue.c.o
                                         0xcb1 (size before relaxing)
- .debug_str     0x0000000000002617      0xf98 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
+ .debug_str     0x000000000000262c      0xf98 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/tasks.c.o
                                        0x173b (size before relaxing)
- .debug_str     0x00000000000035af      0x542 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
+ .debug_str     0x00000000000035c4      0x542 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel/timers.c.o
                                         0xa12 (size before relaxing)
- .debug_str     0x0000000000003af1      0x435 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_str     0x0000000000003b06      0x435 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
                                         0x94f (size before relaxing)
- .debug_str     0x0000000000003f26      0x133 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_str     0x0000000000003f3b      0x133 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/hardware_claim/claim.c.o
                                         0x37d (size before relaxing)
- .debug_str     0x0000000000004059       0xcb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_str     0x000000000000406e       0xcb CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
                                         0x321 (size before relaxing)
- .debug_str     0x0000000000004124       0x71 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_str     0x0000000000004139       0x71 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
                                         0x243 (size before relaxing)
- .debug_str     0x0000000000004195      0x640 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+ .debug_str     0x00000000000041aa      0x640 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
                                         0xc58 (size before relaxing)
- .debug_str     0x00000000000047d5      0x431 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_str     0x00000000000047ea      0x431 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
                                         0x9de (size before relaxing)
- .debug_str     0x0000000000004c06       0x57 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_str     0x0000000000004c1b       0x57 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/lock_core.c.o
                                         0x20f (size before relaxing)
- .debug_str     0x0000000000004c5d      0x20c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_str     0x0000000000004c72      0x20c CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_sync/mutex.c.o
                                         0x7d0 (size before relaxing)
- .debug_str     0x0000000000004e69      0x95e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
+ .debug_str     0x0000000000004e7e      0x95e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/common/pico_time/time.c.o
                                        0x1198 (size before relaxing)
- .debug_str     0x00000000000057c7      0x1f1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_str     0x00000000000057dc      0x1f1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
                                         0x9ac (size before relaxing)
- .debug_str     0x00000000000059b8      0x22e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_str     0x00000000000059cd      0x22e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
                                         0x456 (size before relaxing)
- .debug_str     0x0000000000005be6       0xd3 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_str     0x0000000000005bfb       0xd3 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
                                         0x285 (size before relaxing)
- .debug_str     0x0000000000005cb9      0x17e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_str     0x0000000000005cce      0x17e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
                                         0x30b (size before relaxing)
- .debug_str     0x0000000000005e37       0x84 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_str     0x0000000000005e4c       0x84 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
                                         0x23a (size before relaxing)
- .debug_str     0x0000000000005ebb      0x191 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
+ .debug_str     0x0000000000005ed0      0x191 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
                                         0x493 (size before relaxing)
- .debug_str     0x000000000000604c      0x43b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
+ .debug_str     0x0000000000006061      0x43b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_multicore/multicore.c.o
                                         0xc64 (size before relaxing)
- .debug_str     0x0000000000006487      0x29e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
+ .debug_str     0x000000000000649c      0x29e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_uart/uart.c.o
                                         0xbbe (size before relaxing)
- .debug_str     0x0000000000006725       0xd7 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_str     0x000000000000673a       0xd7 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
                                         0x290 (size before relaxing)
- .debug_str     0x00000000000067fc      0x2a9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_str     0x0000000000006811      0x2a9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
                                         0x76a (size before relaxing)
- .debug_str     0x0000000000006aa5       0x71 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_str     0x0000000000006aba       0x71 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
                                         0x461 (size before relaxing)
- .debug_str     0x0000000000006b16       0x62 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_str     0x0000000000006b2b       0x62 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
                                          0x8d (size before relaxing)
- .debug_str     0x0000000000006b78       0x59 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_str     0x0000000000006b8d       0x59 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
                                          0x90 (size before relaxing)
- .debug_str     0x0000000000006bd1       0x5b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_str     0x0000000000006be6       0x5b CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
                                          0x92 (size before relaxing)
- .debug_str     0x0000000000006c2c       0xca CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_str     0x0000000000006c41       0xca CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
                                         0x289 (size before relaxing)
- .debug_str     0x0000000000006cf6       0x61 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_str     0x0000000000006d0b       0x61 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
                                          0x98 (size before relaxing)
- .debug_str     0x0000000000006d57       0x59 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_str     0x0000000000006d6c       0x59 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
                                          0x90 (size before relaxing)
- .debug_str     0x0000000000006db0       0xa1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_str     0x0000000000006dc5       0xa1 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
                                         0x28e (size before relaxing)
- .debug_str     0x0000000000006e51       0x5f CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_str     0x0000000000006e66       0x5f CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
                                          0x96 (size before relaxing)
- .debug_str     0x0000000000006eb0       0xe2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
+ .debug_str     0x0000000000006ec5       0xe2 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_malloc/malloc.c.o
                                         0x408 (size before relaxing)
- .debug_str     0x0000000000006f92       0x56 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_str     0x0000000000006fa7       0x56 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
                                          0x8d (size before relaxing)
- .debug_str     0x0000000000006fe8      0x246 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_str     0x0000000000006ffd      0x246 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
                                         0x3e5 (size before relaxing)
- .debug_str     0x000000000000722e      0x29e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_str     0x0000000000007243      0x29e CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_printf/printf.c.o
                                         0x4dc (size before relaxing)
- .debug_str     0x00000000000074cc       0x4a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_str     0x00000000000074e1       0x4a CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
                                          0x81 (size before relaxing)
- .debug_str     0x0000000000007516      0x317 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_str     0x000000000000752b      0x317 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
                                         0x72f (size before relaxing)
- .debug_str     0x000000000000782d      0x2e9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_str     0x0000000000007842      0x2e9 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
                                         0xd73 (size before relaxing)
- .debug_str     0x0000000000007b16      0x3b6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+ .debug_str     0x0000000000007b2b      0x3b6 CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
                                         0xe99 (size before relaxing)
- .debug_str     0x0000000000007ecc      0x17d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
+ .debug_str     0x0000000000007ee1      0x17d CMakeFiles/ps_2_freertos.dir/home/yasuno/Developments/RP2040/pico-sdk/src/rp2_common/hardware_spi/spi.c.o
                                         0x711 (size before relaxing)
- .debug_str     0x0000000000008049       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_str     0x00000000000080ef      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
+ .debug_str     0x000000000000805e       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x0000000000008104      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(lib_a-strlen-stub.o)
                                         0x1c5 (size before relaxing)
 
 .debug_frame    0x0000000000000000     0x357c
